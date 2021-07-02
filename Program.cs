@@ -1,63 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Leetcode2021_July_CSharp
+﻿namespace Leetcode2021_July_CSharp
 {
-    class Program
+    internal class Program
     {
-        // Day One - GreyCode
-        // An n-bit gray code sequence is a sequence of 2n integers where:
+        // Day Two - Find K Closest Elements
 
-        // Every integer is in the inclusive range [0, 2n - 1],
-        // The first integer is 0,
-        // An integer appears no more than once in the sequence,
-        // The binary representation of every pair of adjacent integers differs by exactly one bit, and
-        // The binary representation of the first and last integers differs by exactly one bit.
-        // Given an integer n, return any valid n-bit gray code sequence.
+        //Given a sorted integer array arr, two integers k and x, return the k closest integers to x in the array.The result should also be sorted in ascending order.
 
+        //An integer a is closer to x than an integer b if:
 
+        //|a - x| < |b - x|, or
+        //|a - x| == |b - x| and a < b
 
-        // Example 1:
+        //Example 1:
 
-        // Input: n = 2
-        // Output: [0,1,3,2]
-        // Explanation:
-        // The binary representation of [0,1,3,2] is [00,01,11,10].
-        // - 00 and 01 differ by one bit
-        // - 01 and 11 differ by one bit
-        // - 11 and 10 differ by one bit
-        // - 10 and 00 differ by one bit
-        // [0,2,3,1] is also a valid gray code sequence, whose binary representation is [00,10,11,01].
-        // - 00 and 10 differ by one bit
-        // - 10 and 11 differ by one bit
-        // - 11 and 01 differ by one bit
-        // - 01 and 00 differ by one bit
-        // Example 2:
+        //Input: arr = [1, 2, 3, 4, 5], k = 4, x = 3
+        //Output: [1,2,3,4]
+        //Example 2:
 
-        // Input: n = 1
-        // Output: [0,1]
-
-
-        // Constraints:
-
-        // 1 <= n <= 16
-
-        // <
-        public IList<int> GrayCode(int n)
+        //Input: arr = [1, 2, 3, 4, 5], k = 4, x = -1
+        //Output: [1,2,3,4]
+        public IList<int> FindClosestElements(int[] arr, int k, int x)
         {
 
-            int len = 1 << n;
-            IList<int> res = new List<int>(len);
-            for (int i = 0; i < len; i++)
-            {
-                res.Add(i ^ (i >> 1));
-            }
-
-            return res;
         }
-        static void Main(string[] args)
+
+        private static void Main(string[] args)
         {
-            Console.WriteLine(1 << 2);  // 4
         }
     }
 }
