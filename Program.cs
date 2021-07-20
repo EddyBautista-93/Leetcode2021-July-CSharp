@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Leetcode2021_July_CSharp
@@ -19,17 +20,31 @@ namespace Leetcode2021_July_CSharp
 
         public static string Disemvowel(string str)
         {
+            // array to loop through the string 
             char[] charArray = str.ToCharArray();
-            foreach (var item in charArray)
+
+            // create a empty array to insert the new string 
+            List<char> newSentenceList = new List<char>();
+
+            // create a hashset for vowels 
+            var vowels = new HashSet<char> { 'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U' };
+
+            for (int i = 0; i < charArray.Length; i++)
             {
-                if
+                if (!vowels.Contains(charArray[i]))
+                {
+                    newSentenceList.Add(charArray[i]);
+                }
+              
             }
-            return str;
+            string returnString = string.Join("", newSentenceList);
+            return returnString;
         }
 
         private static void Main(string[] args)
         {
-            
+            Disemvowel("This website is for losers LOL!");
+            Console.WriteLine("Ths wbst s fr lsrs LL!"); // test case
         }
     }
 }
